@@ -20,6 +20,8 @@ namespace UnityStandardAssets._2D
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
+        Transform playerGFX;                // Ref to GFX to change direction
+
         private void Awake()
         {
             // Setting up references.
@@ -46,6 +48,16 @@ namespace UnityStandardAssets._2D
 
             // Set the vertical animation
             m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
+
+            // Old deprecated code
+            // playerGFX = transform.FindChild("GFX");
+            playerGFX = transform.Find("GFX");
+
+            if (playerGFX == null)
+            {
+                Debug.LogError("AAAAAHHHHHHHHHHHHHH NO GFX OBJECT AS A CHILD OF THE PLAYER!!!!");
+   
+            }
         }
 
 
@@ -106,9 +118,9 @@ namespace UnityStandardAssets._2D
             m_FacingRight = !m_FacingRight;
 
             // Multiply the player's x local scale by -1.
-            Vector3 theScale = transform.localScale;
+            Vector3 theScale = playerGFX.localScale;
             theScale.x *= -1;
-            transform.localScale = theScale;
+            playerGFX.localScale = theScale;
         }
     }
 }
