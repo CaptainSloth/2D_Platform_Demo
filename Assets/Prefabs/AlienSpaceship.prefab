@@ -277,6 +277,7 @@ MonoBehaviour:
   speed: 600
   fMode: 0
   pathIsEnded: 0
+  spriteSize: 0.2
   nextWPDistance: 3
 --- !u!114 &114566899685150594
 MonoBehaviour:
@@ -323,6 +324,8 @@ MonoBehaviour:
     type: 2}
   shakeAmt: 0.1
   shakeTime: 0.1
+  deathSoundName: Explody
+  creditDrop: 10
   statusIndicator: {fileID: 114879526696532692}
 --- !u!114 &114879526696532692
 MonoBehaviour:
@@ -369,7 +372,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b95e69f25dad2f8418c108e1fb8213a9, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 283119636f1de2840ad1714cbc4ff6cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -377,7 +380,7 @@ SpriteRenderer:
   m_Size: {x: 2.3, y: 1.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!222 &222188996960201686
 CanvasRenderer:

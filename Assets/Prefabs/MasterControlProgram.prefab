@@ -122,7 +122,7 @@ MonoBehaviour:
   spawnDelay: 2
   spawnCountdown: SpawnCountdown
   respawnSoundName: Respawn
-  creditGainSoundName: CreditGain
+  gainCreditSoundName: CreditSoundFX
   gameOverSoundName: GameOver
   cameraShake: {fileID: 114609831036669472}
   gameOverUI: {fileID: 0}
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1059545876902656}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 612077d5729d656408581b5ff46a0f99, type: 3}
   m_Name: 

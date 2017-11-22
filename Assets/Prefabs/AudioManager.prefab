@@ -129,3 +129,17 @@ MonoBehaviour:
     randVol: 0.2
     randPitch: 0.1
     loop: 0
+  - name: NoCredits
+    clip: {fileID: 8300000, guid: f0c00f6d2649dcc4aa2e0ba76bf2ab9e, type: 3}
+    volume: 0.5
+    pitch: 1
+    randVol: 0
+    randPitch: 0
+    loop: 0
+  - name: CreditSoundFX
+    clip: {fileID: 8300000, guid: 1716d9043266f5b4885e508fdaa4ea40, type: 3}
+    volume: 0.5
+    pitch: 1
+    randVol: 0
+    randPitch: 0
+    loop: 0

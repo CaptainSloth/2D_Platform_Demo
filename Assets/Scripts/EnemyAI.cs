@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using Pathfinding;
 
@@ -16,6 +16,8 @@ public class EnemyAI : MonoBehaviour
     public float speed = 1000f;         //The AI’s speed per second
     public ForceMode2D fMode;
     public bool pathIsEnded = false;
+
+    public float spriteSize = 0.2f;
     
     public float nextWPDistance = 3;          // The max distance from the AI to a waypoint for it to continue to the next waypoint
     private int currentWP = 0;                // The waypoint we are currently moving towards
@@ -66,6 +68,19 @@ public class EnemyAI : MonoBehaviour
         {
             // Start a new path to the target position, return the result to the OnPathComplete method
             seeker.StartPath(transform.position, target.position, OnPathComplete);
+
+            // Look at target 
+            if (target.position.x > transform.position.x)
+            {
+                //face right
+                transform.localScale = new Vector3(-spriteSize, spriteSize, spriteSize);
+            }
+            else if (target.position.x < transform.position.x)
+            {
+                //face left
+                transform.localScale = new Vector3(spriteSize, spriteSize, spriteSize);
+            }
+
             yield return new WaitForSeconds(1f / updateRate);
             StartCoroutine(UpdatePath());
         }    
@@ -89,7 +104,7 @@ public class EnemyAI : MonoBehaviour
             }
             return;
         }
-        //TODO: Always look at player
+
         if (path == null)
             return;
         if (currentWP >= path.vectorPath.Count)
