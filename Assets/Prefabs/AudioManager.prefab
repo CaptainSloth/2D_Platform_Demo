@@ -143,3 +143,10 @@ MonoBehaviour:
     randVol: 0
     randPitch: 0
     loop: 0
+  - name: SlingshotFireFX
+    clip: {fileID: 8300000, guid: a8abc2db665e0164185a5094c117d707, type: 3}
+    volume: 0.5
+    pitch: 1
+    randVol: 0
+    randPitch: 0
+    loop: 0
