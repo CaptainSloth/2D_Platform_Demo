@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+//if (GameObject.Find("player(Clone)") != null)
+//Transform player = (Transform)Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
+//Camera2DFollow cameraFolow = Camera.main.GetComponent<Camera2DFollow>();
+
 public class MasterControlProgram : MonoBehaviour {
 
     public static MasterControlProgram mcp;
@@ -18,13 +24,13 @@ public class MasterControlProgram : MonoBehaviour {
     private int startingCredits;
     public static int Credits;
 
-    void Awake()
-    {
-        if (mcp == null)
-        {
-            mcp = GameObject.FindGameObjectWithTag("MCP").GetComponent<MasterControlProgram>();
-        }    
-    }
+    //void Awake()
+    //{
+    //    if (mcp == null)
+    //    {
+    //        mcp = GameObject.FindGameObjectWithTag("MCP").GetComponent<MasterControlProgram>();
+    //    }    
+    //}
 
     public Transform playerPrefab;
     public Transform spawnPoint;
@@ -59,6 +65,11 @@ public class MasterControlProgram : MonoBehaviour {
 
     void Start()
     {
+        if (mcp == null)
+        {
+            mcp = GameObject.FindGameObjectWithTag("MCP").GetComponent<MasterControlProgram>();
+        }
+
         if (cameraShake == null)
         {
             Debug.LogError("no camera shake referenced in MCP");
@@ -102,15 +113,17 @@ public class MasterControlProgram : MonoBehaviour {
 
     }
 
-    public IEnumerator _RespawnPlayer()
+    public IEnumerator RespawnPlayer()
     {
         // audioManager.PlaySound(spawnCountdown); // do we want a countdown?
         yield return new WaitForSeconds(spawnDelay);
 
-        audioManager.PlaySound(respawnSoundName);    
-        Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
-        Transform particleclone = Instantiate (spawnFX, spawnPoint.position, spawnPoint.rotation) as Transform;
-        Destroy(particleclone.gameObject, 3f);
+        audioManager.PlaySound(respawnSoundName); //play respawn soundFX
+
+        Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation); //Respawn
+
+        Transform particleclone = Instantiate (spawnFX, spawnPoint.position, spawnPoint.rotation) as Transform; //Particles
+        Destroy(particleclone.gameObject, 3f); //destroy particles
     }
 
 
@@ -124,7 +137,7 @@ public class MasterControlProgram : MonoBehaviour {
         }
         else
         {
-            mcp.StartCoroutine(mcp._RespawnPlayer());
+            mcp.StartCoroutine(mcp.RespawnPlayer());
         }
     }
 

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114609831036669472}
   - component: {fileID: 114380932461831178}
   - component: {fileID: 114757136285557338}
+  - component: {fileID: 114533961603096346}
   m_Layer: 0
   m_Name: MasterControlProgram
   m_TagString: MCP
@@ -53,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1059545876902656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 6.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4445647891688252}
@@ -102,6 +103,116 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   timeBetweenWaves: 5
+--- !u!114 &114533961603096346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1059545876902656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d065a2e43da0047801fc67a7d8f62a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Respawn
+    clip: {fileID: 8300000, guid: 84b19fa3d42f15d4e8a2c965630090dd, type: 3}
+    volume: 0.7
+    pitch: 1
+    randVol: 0.1
+    randPitch: 0.1
+    loop: 0
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: 10e0f0810369dec4ea5244397696ebc6, type: 3}
+    volume: 0.7
+    pitch: 1
+    randVol: 0.1
+    randPitch: 0.1
+    loop: 1
+  - name: ButtonHover
+    clip: {fileID: 8300000, guid: b04142991d9f4ee4bb57213fc0b96536, type: 3}
+    volume: 0.7
+    pitch: 1
+    randVol: 0.1
+    randPitch: 0.1
+    loop: 0
+  - name: ButtonPress
+    clip: {fileID: 8300000, guid: cdb85aa4a46097744bdeb4ca2cb39c0d, type: 3}
+    volume: 0.4
+    pitch: 1
+    randVol: 0
+    randPitch: 0
+    loop: 0
+  - name: DefaultPew
+    clip: {fileID: 8300000, guid: 90321a0246f453346b6dfe16174d10ea, type: 3}
+    volume: 0.7
+    pitch: 1
+    randVol: 0.1
+    randPitch: 0.1
+    loop: 0
+  - name: Explody
+    clip: {fileID: 8300000, guid: f11eb09043f3abe448a1c882c1f8ad15, type: 3}
+    volume: 0.7
+    pitch: 1
+    randVol: 0.1
+    randPitch: 0.1
+    loop: 0
+  - name: DethVoice
+    clip: {fileID: 8300000, guid: 9c380918683f56b4d9d6b8d7f76bcb4d, type: 3}
+    volume: 0.5
+    pitch: 1
+    randVol: 0.3
+    randPitch: 0
+    loop: 0
+  - name: PlayerGrunt
+    clip: {fileID: 8300000, guid: a6e7f2f45aac34b4a93afb0650bcfd82, type: 3}
+    volume: 0.4
+    pitch: 1
+    randVol: 0.2
+    randPitch: 0.1
+    loop: 0
+  - name: SpawnCountdown
+    clip: {fileID: 8300000, guid: c206febe4c0fc21478ba69b708bf3da0, type: 3}
+    volume: 0.4
+    pitch: 1
+    randVol: 0.2
+    randPitch: 0.1
+    loop: 0
+  - name: GameOver
+    clip: {fileID: 8300000, guid: 794212eeec4a3ef4fa966d37652a5b33, type: 3}
+    volume: 0.7
+    pitch: 1
+    randVol: 0.2
+    randPitch: 0.1
+    loop: 0
+  - name: LandingFootsteps
+    clip: {fileID: 8300000, guid: ce85ddaadaa6bb741b9f84ad5a2c8592, type: 3}
+    volume: 0.5
+    pitch: 1
+    randVol: 0.2
+    randPitch: 0.1
+    loop: 0
+  - name: NoCredits
+    clip: {fileID: 8300000, guid: f0c00f6d2649dcc4aa2e0ba76bf2ab9e, type: 3}
+    volume: 0.5
+    pitch: 1
+    randVol: 0
+    randPitch: 0
+    loop: 0
+  - name: CreditSoundFX
+    clip: {fileID: 8300000, guid: 1716d9043266f5b4885e508fdaa4ea40, type: 3}
+    volume: 0.5
+    pitch: 1
+    randVol: 0
+    randPitch: 0
+    loop: 0
+  - name: SlingshotFireFX
+    clip: {fileID: 8300000, guid: a8abc2db665e0164185a5094c117d707, type: 3}
+    volume: 0.5
+    pitch: 1
+    randVol: 0
+    randPitch: 0
+    loop: 0
 --- !u!114 &114589156364262220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,7 +227,7 @@ MonoBehaviour:
   maxLives: 3
   startingCredits: 100
   playerPrefab: {fileID: 0}
-  spawnPoint: {fileID: 4348912343301344, guid: 36edc37396a66ac4d81505f66f6a772e, type: 2}
+  spawnPoint: {fileID: 4445647891688252}
   spawnFX: {fileID: 4919206445940460, guid: 92c7ad77a45fb0941b5979eb6c0f6004, type: 2}
   spawnDelay: 2
   spawnCountdown: SpawnCountdown

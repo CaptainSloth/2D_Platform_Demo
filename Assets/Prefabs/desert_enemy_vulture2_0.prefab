@@ -164,7 +164,7 @@ MonoBehaviour:
   shakeTime: 0.1
   deathSoundName: Explody
   creditDrop: 10
-  statusIndicator: {fileID: 114099962172152030, guid: fe4adbff0b8735e4b9a42c3dfa841d6e,
+  statusIndicator: {fileID: 114765865915904238, guid: 9a69f6ae76745024797710dbc6640017,
     type: 2}
 --- !u!212 &212706144605506632
 SpriteRenderer:
