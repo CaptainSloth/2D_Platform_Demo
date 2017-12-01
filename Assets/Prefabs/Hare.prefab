@@ -679,7 +679,7 @@ MonoBehaviour:
   BulletTrailPrefab: {fileID: 4330115457194738, guid: 607e2efd597573746b2a772c20bc8738,
     type: 2}
   HitPrefab: {fileID: 4145997236467090, guid: f40d728933c652c4690d6182c96437ab, type: 2}
-  weaponShootSFX: CreditSoundFX
+  weaponShootSFX: SlingshotFireFX
 --- !u!212 &212030437781927800
 SpriteRenderer:
   m_ObjectHideFlags: 1

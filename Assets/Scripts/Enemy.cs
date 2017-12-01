@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour {
     public float shakeAmt = 0.1f;
     public float shakeTime = 0.1f;
 
-    public string deathSoundName = "Explody";
+    public string deathSoundName = "EnemyDethSFX";
 
     public int creditDrop = 10;
 

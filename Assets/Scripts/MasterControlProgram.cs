@@ -24,13 +24,13 @@ public class MasterControlProgram : MonoBehaviour {
     private int startingCredits;
     public static int Credits;
 
-    //void Awake()
-    //{
-    //    if (mcp == null)
-    //    {
-    //        mcp = GameObject.FindGameObjectWithTag("MCP").GetComponent<MasterControlProgram>();
-    //    }    
-    //}
+    void Awake()
+    {
+        if (mcp == null)
+        {
+            mcp = GameObject.FindGameObjectWithTag("MCP").GetComponent<MasterControlProgram>();
+        }    
+    }
 
     public Transform playerPrefab;
     public Transform spawnPoint;
@@ -65,10 +65,10 @@ public class MasterControlProgram : MonoBehaviour {
 
     void Start()
     {
-        if (mcp == null)
-        {
-            mcp = GameObject.FindGameObjectWithTag("MCP").GetComponent<MasterControlProgram>();
-        }
+        // if (mcp == null)
+        // {
+        //    mcp = GameObject.FindGameObjectWithTag("MCP").GetComponent<MasterControlProgram>();
+        // }
 
         if (cameraShake == null)
         {
