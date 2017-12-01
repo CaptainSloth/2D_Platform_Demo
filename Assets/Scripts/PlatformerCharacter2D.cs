@@ -94,7 +94,6 @@ using UnityEngine;
 
             // Old deprecated code
             playerGFX = transform.Find("GFX");
-            playerGFX = transform.Find("GFX");
 
             if (playerGFX == null)
             {
