@@ -86,6 +86,14 @@ MonoBehaviour:
   toHit:
     serializedVersion: 2
     m_Bits: 4294967035
+  effectSpawnRate: 10
+  makeShakey: 0
+  camShakeAmt: 0.05
+  camShakeTime: 0.1
+  MuzzleFlashPrefab: {fileID: 0}
+  BulletTrailPrefab: {fileID: 0}
+  HitPrefab: {fileID: 0}
+  weaponShootSFX: DefaultPew
 --- !u!212 &212633904358054078
 SpriteRenderer:
   m_ObjectHideFlags: 1
