@@ -7,6 +7,10 @@ TagManager:
   - MCP
   - Fire
   - Enemy
+  - Quicksand
+  - QuicksandChild
+  - QuicksandParent
+  - QuicksandGFX
   layers:
   - Default
   - TransparentFX
