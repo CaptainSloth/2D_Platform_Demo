@@ -22,6 +22,7 @@ public class Player : MonoBehaviour {
         stats = PlayerStats.instance;
 
         stats.curHealth = stats.maxHealth;
+        stats.curHydro = stats.maxHydro;
         if (statusIndicator == null)
         {
             Debug.LogError("NO STATUS INDICATOR REFERENCED, WTF YO!");
@@ -40,6 +41,7 @@ public class Player : MonoBehaviour {
         }
 
         InvokeRepeating("RegenHealth", 1f/stats.healthRegenRate, 1f/stats.healthRegenRate);
+        InvokeRepeating("HydroLoss", 1f / stats.hydroLoss, 1f / stats.hydroLoss);
     }
 
     void RegenHealth()
@@ -48,6 +50,21 @@ public class Player : MonoBehaviour {
         statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
     }
 
+    void ThirstDamage()
+    {
+        stats.curHealth -= 1;
+    }
+
+    void HydroLoss()
+    {
+        stats.curHydro -= 1;
+        if (stats.curHydro <= 0)
+        {
+            //Damage health - Fix issue where the player regens health... Or take out health regen...
+            InvokeRepeating("ThirstDamage", 1f / stats.thirstDamage, 1f / stats.thirstDamage);
+        }
+    }
+    
     void Update()
     {
         if (transform.position.y <= fallBoundry)

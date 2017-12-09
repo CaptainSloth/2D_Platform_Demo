@@ -74,7 +74,7 @@ public class Weapon : MonoBehaviour {
         Vector2 firePointPos = new Vector2(firePoint.position.x, firePoint.position.y);
         RaycastHit2D hit = Physics2D.Raycast(firePointPos, mousePos - firePointPos, 100, toHit);
 
-        Debug.Log("Testing Shoot");
+        // Debug.Log("Testing Shoot");
         Debug.DrawLine(firePointPos, (mousePos-firePointPos)*100, Color.cyan);
         if (hit.collider != null)
         {
